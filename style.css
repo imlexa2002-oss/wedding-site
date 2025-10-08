@@ -1,0 +1,36 @@
+body {
+   background: linear-gradient(to bottom, #99CCFF, #FF99CC); /* Ядреный розовый */
+    /* ... остальные стили ... */
+}
+h1 {
+    color: #FF00FF; /* Розовый */
+    font-size: 3em;
+    text-shadow: 3px 3px 5px #00FF00; /* Зеленая тень - это ужасно и прекрасно */
+}
+
+h2 {
+    color: #FF0000; /* Просто красный */
+}
+
+a {
+    color: #0000FF; /* Ярко-синие ссылки */
+    font-weight: bold;
+}
+a:visited {
+    color: #FF00FF; /* Фиолетовые посещенные ссылки */
+}
+
+.marquee-top {
+    background-color: #FFFF00; /* Желтый фон для бегущей строки */
+    color: #000000;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+/* Стиль для счетчика */
+.counter {
+    border: 3px dashed #FF0000; /* Пунктирная красная рамка */
+    padding: 10px;
+    width: 150px;
+    background-color: #FFFFFF;
+}

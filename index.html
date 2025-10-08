@@ -1,0 +1,549 @@
+<html>
+<head>
+    <title>Лёша и Настя - Свадьба!!!</title>
+    <meta <meta charset="UTF-8">
+    <!-- Устаревшая кодировка для аутентичности -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Это подключение файла со стилями -->
+</head>
+
+<body>
+    <center>
+        <!-- Всё содержимое по центру! Только так! -->
+
+        <!-- Бегущая строка - КОРОЛЕВА САЙТА -->
+        <marquee behavior="scroll" direction="left" class="marquee-top">
+            <blink>✨ ДОБРО ПОЖАЛОВАТЬ НА САЙТ НАШЕЙ СВАДЬБЫ!!! ✨ 08.11.2024 - ПРИХОДИТЕ!!1 ✨ НЕ ОПАЗДЫВАЙТЕ!!! ✨</blink>
+        </marquee>
+
+        <!-- Заголовок -->
+        <h1><img src="images/heart.gif"> ЛЁША и НАСТЯ <img src="images/heart.gif"></h1>
+        <h2>Приглашаем вас на нашу свадьбу!</h2>
+
+        <!-- БЛОК СЧЕТЧИКА -->
+		
+<!-- СЧЕТЧИК "Я БЫЛ ЗДЕСЬ" -->
+<div class="counter">
+    <p>Сколько людей уже посетило этот сайт:</p>
+    
+    <center>
+        <table border="3" cellpadding="10" bgcolor="#FFFFFF" style="margin: 10px;">
+            <tr>
+                <td>
+                    <div id="visitorCount" style="
+                        font-size: 1em; 
+                        font-weight: bold; 
+                        color: #FF0000; 
+                        font-family: 'Courier New', monospace;
+                        text-shadow: 2px 2px 4px #000000;
+                    ">000001</div>
+                </td>
+            </tr>
+        </table>
+    </center>
+    
+    <button onclick="incrementCounter()" style="
+        font-family: 'Comic Sans MS', cursive;
+        padding: 5px 10px;
+        background: linear-gradient(to bottom, #FF00FF, #800080);
+        color: white;
+        border: 3px outset #00FFFF;
+        font-weight: bold;
+        font-size: 0.5em;
+        cursor: pointer;
+        margin: 10px;
+    ">
+        <blink>🌟 Я БЫЛ ЗДЕСЬ! 🌟</blink>
+    </button>
+    
+    <br>
+    <font size="1" color="#666666">
+        Нажми кнопку, если посетил этот сайт!
+    </font>
+</div>
+
+<br><br>
+
+        [ <a href="#about">О НАС</a> ] 
+				[ <a href="#program">ПРОГРАММА</a> ] 
+				[ <a href="#photos">СТИЛЬ СВАДЬБЫ</a> ]          <!-- Добавить эту строку -->
+				[ <a href="#place">МЕСТО И ВРЕМЯ</a> ] 
+				[ <a href="#rsvp">Я ПРИДУ!</a> ]
+				[ <a href="#gift">ПОДАРКИ</a> ] 
+
+        <br><br>
+
+        <!-- Раздел "О нас" -->
+        <div id="about">
+            <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#FFCCFF" align="center">
+                <!-- Толстая рамка border="5" -->
+                <tr>
+                    <td>
+                        <h3><img src="images/star.gif"> КАК МЫ ПОЗНАКОМИЛИСЬ <img src="images/star.gif"></h3>
+                        <center>
+                            <img src="images/our_photo.jpg" width="400" border="2" style="border-color: pink;">
+                            <!-- Атрибут border у img - это по-старинке! -->
+                        </center>
+                        <p align="left">Вот наша история! Тут можно написать несколько строк о том, как вы встретились, где было первое свидание и т.д. Текст можно сделать синим или красным!</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+
+		
+		<!-- РАЗДЕЛ "ФОТО ДЛЯ ВДОХНОВЕНИЯ" -->
+<div id="photos">
+    <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#facea2" align="center">
+        <tr>
+            <td>
+                <h3><img src="images/camera.gif"> СТИЛЬ СВАДЬБЫ</h3>
+                <p align="center"><b>Мы хотим провести <font color="#FF0000">стереотпиную российскую свадьбу </font>с конкурсами (обязательно), драками (необязательно) и прочими характерными атрибутами. Посмторите в каких нарядах мы будем особенно рады вас видеть! </b></p>
+                
+                <center>
+                    <table width="100%" cellpadding="15">
+                        <tr>
+                            
+                            <!-- Фото 2 -->
+                            <td width="25%" valign="top">
+                                <div style="border: 5px ridge #0000FF; padding: 5px; background: white;">
+                                    <img src="images/outfit2.jpg" width="100%" alt="Коктейльные платья" style="display: block;">
+                                </div>
+                                <p align="center">
+                                    <font size="2"><b>Фильм "Горько"</b></font><br>
+                                    <font size="1">Оденетесь как персонажи фильма или используйте их стиль, как вдохновение</font>
+                                </p>
+                            </td>
+                            
+                            <!-- Фото 3 -->
+                            <td width="25%" valign="top">
+                                <div style="border: 5px ridge #00FF00; padding: 5px; background: white;">
+                                    <img src="images/outfit3.jpg" width="100%" alt="Стиль ретро" style="display: block;">
+                                </div>
+                                <p align="center">
+                                    <font size="2"><b>ВСЖ-свадьба</b></font><br>
+                                    <font size="1">Серебристые костюмы, малиновые пиджаки</font>
+                                </p>
+                            </td>
+                            
+                            <!-- Фото 4 -->
+                            <td width="25%" valign="top">
+                                <div style="border: 5px ridge #FFFF00; padding: 5px; background: white;">
+                                    <img src="images/outfit4.jpg" width="100%" alt="Летний стиль" style="display: block;">
+                                </div>
+                                <p align="center">
+                                    <font size="2"><b>Стиль 90-х</b></font><br>
+                                    <font size="1">Спортивные костюмы, разноцветные лосины, безумные начесы</font>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+                
+                <!-- Общая фраза с описанием -->
+                <div align="center" style="margin: 20px; padding: 15px; background: #FFFFCC; border: 3px dotted #FF0000;">
+                    <h4 style="color: #FF00FF; margin: 0;">💫 ВАЖНОЕ О НАРЯДАХ:</h4>
+                    <p style="margin: 10px;">
+                        <b>Мы будем рады видеть вас в любых нарядах, которые делают вас счастливыми!</b><br>
+                        Главное - чтобы вам было комфортно и вы могли от души танцевать и веселиться.<br>
+                    </p>
+                </div>
+                
+                <!-- Анимированный текст -->
+                <marquee behavior="alternate" direction="left" bgcolor="#000000">
+                    <font color="#FFFFFF" size="+1"><b>✨ БУДЬТЕ САМИМИ СОБОЙ! ✨</b></font>
+                </marquee>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+
+
+ <!-- Раздел "Программа" -->
+        <div id="program">
+            <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#CCFFCC" align="center">
+                <tr>
+                    <td>
+                        <h3><img src="images/clock.gif"> ПРОГРАММА ДНЯ</h3>
+                        <table width="100%" border="2" cellpadding="5">
+                            <!-- Вложенная таблица! Это высший пилотаж! -->
+                            <tr bgcolor="#FFFFCC">
+                                <td><b>Время</b></td>
+                                <td><b>Событие</b></td>
+                            </tr>
+                            <tr>
+                                <td>19:00</td>
+                                <td>Сбор гостей</td>
+                            </tr>
+                            <tr>
+                                <td>20:00</td>
+                                <td>Еда, конкурсы</td>
+                            </tr>
+                            <tr>
+                                <td>21:00</td>
+                                <td>Караоке, танцы, веселье до утра!</td>
+                            </tr>
+							<tr>
+                                <td>23:30</td>
+                                <td>Конец</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+		
+		<!-- РАЗДЕЛ "МЕСТО И ВРЕМЯ" -->
+<div id="place">
+    <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#CCFFFF" align="center">
+        <tr>
+            <td>
+                <h3><img src="images/location.gif"> МЕСТО И ВРЕМЯ</h3>
+                
+                <center>
+                    <table width="90%" cellpadding="10">
+                        <tr>
+                            <td width="50%" valign="top">
+                                <h4>📅 ДАТА И ВРЕМЯ</h4>
+                                <p>
+                                    <font size="+1"><b>8 ноября 2025 года</b></font><br>
+                                    <b>Сбор гостей:</b> 19:00<br>
+                                </p>
+                                
+                                <h4>📍 АДРЕС</h4>
+                                <p>
+                                    <b>Лофт "The PLACE"</b><br>
+                                    Москва, Партийный переулок дом 1 корп 25<br>
+                                </p>
+                                
+                                <h4>🚗 КАК ДОБРАТЬСЯ</h4>
+                                <p>
+                                    <b>Метро:</b> 10 минут от ст. "Серпуховская"<br>
+                                    <b>Парковка:</b> Присутствует<br>
+                                </p>
+                                
+                                <h4>📞 КОНТАКТЫ ДЛЯ СВЯЗИ</h4>
+                                <p>
+                                    <b>Лёша:</b> +7 (915) 312-13-83<br>
+                                    <b>Настя:</b> +7 (977) 315-79-61<br>
+                                    <b>Менеджер лофта:</b> +7 (926) 552-65-82
+                                </p>
+                            </td>
+                            
+                            <td width="50%" valign="top">
+                                <h4>🗺️ КАК ДОБРАТЬСЯ ОТ МЕТРО</h4>
+                                <!-- Статичная карта - как в старые добрые времена! -->
+                                <div style="border: 3px solid #FF00FF; padding: 5px; background: white;">
+                                    <img src="images/map.png" width="100%" alt="Карта проезда" style="display: block;">
+                                </div>
+                                <center>
+                                <h4>💡 ВАЖНАЯ ИНФОРМАЦИЯ</h4>
+                                <ul style="text-align: left;">
+                                    <li>Пожалуйста, подтвердите участие до 4 ноября</li>	
+                                </ul>
+                                </center>
+                                <!-- Анимированная стрелка-указатель -->
+                                <center>
+                                    
+                                    <font color="#FF0000"><b>МЫ ЖДЕМ ИМЕННО ВАС!</b></font>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+                
+                <!-- Бегущая строка с напоминанием -->
+                <br>
+                <marquee behavior="scroll" direction="left" bgcolor="#FFFF00">
+                    <blink>❗ НЕ ЗАБУДЬТЕ: 8 НОЯБРЯ 2025 ГОДА, 19:00, ЛОФТ "THE PLACE" ❗</blink>
+                </marquee>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+		
+<!-- РАЗДЕЛ "Я ПРИДУ!" -->
+<div id="rsvp">
+    <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#FFFFCC" align="center">
+        <tr>
+            <td>
+                <h3><img src="images/email.gif"> ПОДТВЕРДИТЕ УЧАСТИЕ</h3>
+                
+                <form id="weddingForm">
+                    <table width="100%" cellpadding="8">
+                        <tr>
+                            <td width="30%"><b>Ваше имя:</b></td>
+                            <td><input type="text" name="name" size="30" style="font-family: Comic Sans MS; padding: 5px;" required></td>
+                        </tr>
+                        <tr>
+                            <td><b>Приду ли я:</b></td>
+                            <td>
+                                <select name="attendance" style="font-family: Comic Sans MS; padding: 5px;" required>
+                                    <option value="">-- Выберите ответ --</option>
+                                    <option value="Да, с удовольствием!">Да, с удовольствием!</option>
+                                    <option value="К сожалению, не смогу">К сожалению, не смогу</option>
+                                    <option value="Пока не знаю">Пока не знаю</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><b>Пожелания:</b></td>
+                            <td>
+                                <textarea name="wishes" rows="4" cols="40" style="font-family: Comic Sans MS; padding: 5px;" placeholder="Напишите ваши пожелания..."></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" style="font-family: Comic Sans MS; padding: 10px 20px; background: #FF00FF; color: white; border: 2px solid #0000FF; font-weight: bold; cursor: pointer;">
+                                    ОТПРАВИТЬ ОТВЕТ!
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                
+                <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; background: #CCFFCC; border: 2px dashed #FF0000;"></div>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+
+<!-- РАЗДЕЛ "ПОДАРКИ" -->
+<div id="gift">
+    <table width="800" border="5" cellspacing="3" cellpadding="10" bgcolor="#CCFFCC" align="center">
+        <tr>
+            <td>
+                <h3><img src="images/gift.gif"> ПОДАРКИ</h3>
+                
+                <center>
+                    <table width="90%" cellpadding="15">
+                        <tr>
+                            <td valign="top">
+                                <!-- Основной текст о подарках -->
+                                <div style="border: 4px double #FF00FF; padding: 20px; background: #FFFFFF; margin-bottom: 20px;">
+                                    <h4 style="color: #FF0000; text-align: center;">🎁 ОСОБАЯ ПРОСЬБА О ПОДАРКАХ</h4>
+                                    <p align="center">
+                                        Дорогие наши гости!<br><br>
+                                        
+                                        <b>Ваше присутствие на нашей свадьбе - уже самый лучший подарок для нас!</b><br><br>
+                                        
+                                        Если же вы хотите сделать нам материальный подарок,<br>
+                                        мы будем бесконечно благодарны за <font color="#FF0000"><b>конверт с денежным подарком</b></font>.<br><br>
+                                        
+                                    </p>
+                                </div>
+								 </table>
+								 </table>
+								<br><br>
+                                
+
+<!-- СЧЕТЧИК В ТАБЛИЦЕ -->
+<table width="800" border="3" cellspacing="3" cellpadding="10" bgcolor="#000000" align="center">
+    <tr>
+        <td>
+            <center>
+                <h4 style="color: #FFFF00; margin: 0 0 10px 0;">⏰ ДО СВАДЬБЫ ОСТАЛОСЬ:</h4>
+                <div id="countdown" style="font-size: 1.3em; font-weight: bold; font-family: 'Courier New', monospace; color: #00FF00;">
+                    <span id="days">00</span> дней <span id="hours">00</span> часов 
+                    <span id="minutes">00</span> минут <span id="seconds">00</span> секунд
+                </div>
+                <font size="1" color="#FF00FF">счетчик обновляется каждую секунду!</font>
+            </center>
+        </td>
+    </tr>
+</table>
+
+
+
+        <!-- Футер -->
+        <br><br><br>
+		 <center>
+        <hr width="80%"> <!-- Горизонтальная линия -->
+        <p>© 2025 Сайт сделан с любовью для вас! Последнее обновление: Сегодня.</p>
+
+        <!-- Еще одна бегущая строка внизу -->
+        <marquee behavior="scroll" direction="right">
+            <img src="images/dove.gif"> ЖДЕМ ВАС!!! <img src="images/dove.gif">
+        </marquee>
+
+    </center>
+<script>
+
+// СЧЕТЧИК ОБРАТНОГО ОТСЧЕТА ДО СВАДЬБЫ
+function updateCountdown() {
+    // УКАЖИТЕ ДАТУ ВАШЕЙ СВАДЬБЫ (год, месяц-1, день, час, минуты)
+    const weddingDate = new Date(2025, 10, 8, 18, 0); // 15 августа 2024, 15:00
+    const now = new Date();
+    
+    const difference = weddingDate - now;
+    
+    if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        // Обновляем цифры на странице
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        
+        // Меняем цвет в зависимости от времени (опционально)
+        if (days < 7) {
+            document.getElementById('countdown').style.color = '#FF0000'; // Красный за неделю
+        } else if (days < 30) {
+            document.getElementById('countdown').style.color = '#FF9900'; // Оранжевый за месяц
+        } else {
+            document.getElementById('countdown').style.color = '#00FF00'; // Зеленый
+        }
+    } else {
+        // Если дата свадьбы наступила
+        document.getElementById('countdown').innerHTML = 
+            '<span style="color: #FF00FF; font-size: 1.5em;">🎉 СВАДЬБА СЕГОДНЯ! 🎉</span>';
+        clearInterval(countdownTimer);
+    }
+}
+
+// Запускаем счетчик сразу и обновляем каждую секунду
+updateCountdown();
+const countdownTimer = setInterval(updateCountdown, 1000);
+
+
+// ЗАМЕНИТЕ ЭТОТ URL НА ВАШ РЕАЛЬНЫЙ URL ИЗ GOOGLE APPS SCRIPT
+const SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_РЕАЛЬНЫЙ_URL/exec';
+
+document.getElementById('weddingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitButton = this.querySelector('button[type="submit"]');
+    const messageDiv = document.getElementById('formMessage');
+    
+    // Показываем сообщение "Отправляется..."
+    messageDiv.style.display = 'block';
+    messageDiv.innerHTML = '<img src="images/loading.gif" alt="Loading"> Отправляем ваш ответ...';
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'ОТПРАВЛЯЕМ...';
+    
+    // Собираем данные формы (ТОЛЬКО имя, ответ и пожелания)
+    const formData = new FormData(this);
+    const data = {
+        name: formData.get('name'),
+        attendance: formData.get('attendance'),
+        wishes: formData.get('wishes')
+    };
+    
+    // Отправляем данные в Google Таблицу
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.result === 'success') {
+            messageDiv.style.background = '#CCFFCC';
+            messageDiv.innerHTML = '✅ ' + result.message + ' <br><blink>Ждем вас на свадьбе!</blink>';
+            document.getElementById('weddingForm').reset();
+        } else {
+            throw new Error(result.message);
+        }
+    })
+    .catch(error => {
+        messageDiv.style.background = '#FFCCCC';
+        messageDiv.innerHTML = '❌ Ошибка: ' + error.message + '<br>Попробуйте еще раз или напишите нам на email!';
+    })
+    .finally(() => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'ОТПРАВИТЬ ОТВЕТ!';
+    });
+});
+
+// СЧЕТЧИК ПОСЕТИТЕЛЕЙ
+let visitorCount = localStorage.getItem('visitorCount') || 1;
+
+// Обновляем отображение счетчика
+function updateCounterDisplay() {
+    const countElement = document.getElementById('visitorCount');
+    countElement.textContent = visitorCount.toString().padStart(6, '0');
+    
+    // Меняем цвет в зависимости от количества
+    if (visitorCount >= 100) {
+        countElement.style.color = '#FF00FF';
+    } else if (visitorCount >= 50) {
+        countElement.style.color = '#FFA500';
+    } else if (visitorCount >= 20) {
+        countElement.style.color = '#00FF00';
+    } else {
+        countElement.style.color = '#FF0000';
+    }
+}
+
+// Функция для увеличения счетчика
+function incrementCounter() {
+    // Проверяем, нажимал ли уже пользователь кнопку
+    if (!localStorage.getItem('hasClickedCounter')) {
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        localStorage.setItem('hasClickedCounter', 'true');
+        
+        updateCounterDisplay();
+        
+        // Показываем сообщение
+        showCounterMessage();
+        
+        // Добавляем анимацию
+        animateCounter();
+    } else {
+        alert('Вы уже нажимали эту кнопку! Спасибо! 😊');
+    }
+}
+
+// Показываем сообщение после нажатия
+function showCounterMessage() {
+    const messages = [
+        'УРА! Вы стали официальным посетителем! 🎉',
+        'Ваш визит записан в анналы истории! 📜',
+        'Спасибо, что отметились! 💫',
+        'Теперь вы часть нашей свадебной статистики! 📊',
+        'Ваше присутствие увековечено! 🌟'
+    ];
+    
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    alert(randomMessage);
+}
+
+// Анимация счетчика
+function animateCounter() {
+    const counter = document.getElementById('visitorCount');
+    counter.style.transform = 'scale(1.5)';
+    counter.style.transition = 'transform 0.3s';
+    
+    setTimeout(() => {
+        counter.style.transform = 'scale(1)';
+    }, 300);
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+    updateCounterDisplay();
+});
+</script>
+</script>
+</body>
+</html>
