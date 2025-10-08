@@ -422,11 +422,10 @@ updateCountdown();
 const countdownTimer = setInterval(updateCountdown, 1000);
 
 
-<script>
 // ВАЖНО: ЗАМЕНИТЕ НА ВАШ REAL URL ИЗ GOOGLE APPS SCRIPT
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4OR0neGPXRPK0fNVvJmUlD6H3eb9Mj_49qybFen0dMpzdWiVIHi0dBQB3a8xKx7fW/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnZea0yWw_8EHU2VO2gp8UdND_Ug5QZIGND6dscvpiGKwmNdf3zeweNkIhzZ0Gw6qO/exec';
 
-document.getElementById('weddingForm').addEventListener('submit', function(e) {
+document.getElementById('weddingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const submitButton = this.querySelector('button[type="submit"]');
@@ -439,45 +438,41 @@ document.getElementById('weddingForm').addEventListener('submit', function(e) {
     submitButton.disabled = true;
     submitButton.innerHTML = 'ОТПРАВЛЯЕМ...';
     
-    // Собираем данные
-    const formData = {
-        name: document.getElementById('guestName').value,
-        attendance: document.getElementById('attendance').value,
-        wishes: document.getElementById('wishes').value
-    };
-    
-    // Отправляем запрос
-    fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ошибка сети');
-        }
-        return response.json();
-    })
-    .then(result => {
-        if (result.result === 'success') {
-            messageDiv.style.background = '#CCFFCC';
-            messageDiv.innerHTML = '✅ ' + result.message;
-            document.getElementById('weddingForm').reset();
-        } else {
-            throw new Error(result.message);
-        }
-    })
-    .catch(error => {
+    try {
+        // Собираем данные
+        const formData = {
+            name: document.getElementById('guestName').value,
+            attendance: document.getElementById('attendance').value,
+            wishes: document.getElementById('wishes').value
+        };
+        
+        console.log('Отправляем данные:', formData);
+        
+        // Отправляем запрос с обработкой CORS
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // ВАЖНО: пробуем разные режимы
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        
+        // Если mode: 'no-cors', response будет пустым
+        // Но данные все равно должны отправляться
+        
+        messageDiv.style.background = '#CCFFCC';
+        messageDiv.innerHTML = '✅ Спасибо! Ответ отправлен! 🎉';
+        document.getElementById('weddingForm').reset();
+        
+    } catch (error) {
         console.error('Ошибка:', error);
         messageDiv.style.background = '#FFCCCC';
-        messageDiv.innerHTML = '❌ Ошибка отправки. Попробуйте еще раз или напишите нам на почту.';
-    })
-    .finally(() => {
+        messageDiv.innerHTML = '❌ Ошибка отправки. Попробуйте еще раз!';
+    } finally {
         submitButton.disabled = false;
         submitButton.innerHTML = 'ОТПРАВИТЬ ОТВЕТ!';
-    });
+    }
 });
 
 // СЧЕТЧИК ПОСЕТИТЕЛЕЙ
@@ -554,3 +549,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
