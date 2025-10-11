@@ -13,7 +13,7 @@
 
         <!-- Бегущая строка - КОРОЛЕВА САЙТА -->
         <marquee behavior="scroll" direction="left" class="marquee-top">
-            <blink>✨ ДОБРО ПОЖАЛОВАТЬ НА САЙТ НАШЕЙ СВАДЬБЫ!!! ✨ 08.11.2024 - ПРИХОДИТЕ!!1 ✨ НЕ ОПАЗДЫВАЙТЕ!!! ✨</blink>
+            <blink>✨ ДОБРО ПОЖАЛОВАТЬ НА САЙТ НАШЕЙ СВАДЬБЫ!!! ✨ 08.11.2025 - ПРИХОДИТЕ!!1 ✨ НЕ ОПАЗДЫВАЙТЕ!!! ✨</blink>
         </marquee>
 
         <!-- Заголовок -->
@@ -24,44 +24,24 @@
 		
 <!-- СЧЕТЧИК "Я БЫЛ ЗДЕСЬ" -->
 <div class="counter">
-    <p>Сколько людей уже посетило этот сайт:</p>
+    <p>Количество посетителей сайта:</p>
     
     <center>
         <table border="3" cellpadding="10" bgcolor="#FFFFFF" style="margin: 10px;">
             <tr>
                 <td>
-                    <div id="visitorCount" style="
-                        font-size: 1em; 
-                        font-weight: bold; 
-                        color: #FF0000; 
-                        font-family: 'Courier New', monospace;
-                        text-shadow: 2px 2px 4px #000000;
-                    ">000001</div>
+                    <div id="globalCounter" style="font-size: 3em; font-weight: bold; color: #FF0000; font-family: 'Courier New', monospace;">
+                        Загрузка...
+                    </div>
                 </td>
             </tr>
         </table>
     </center>
     
-    <button onclick="incrementCounter()" style="
-        font-family: 'Comic Sans MS', cursive;
-        padding: 5px 10px;
-        background: linear-gradient(to bottom, #FF00FF, #800080);
-        color: white;
-        border: 3px outset #00FFFF;
-        font-weight: bold;
-        font-size: 0.5em;
-        cursor: pointer;
-        margin: 10px;
-    ">
-        <blink>🌟 Я БЫЛ ЗДЕСЬ! 🌟</blink>
+    <button onclick="incrementGlobalCounter()" style="font-family: 'Comic Sans MS', cursive; padding: 15px 30px; background: #FF00FF; color: white; border: 3px outset #00FFFF; font-weight: bold; cursor: pointer;">
+        <blink>🌟 Я ТУТ БЫЛ! +1 🌟</blink>
     </button>
-    
-    <br>
-    <font size="1" color="#666666">
-        Нажми кнопку, если посетил этот сайт!
-    </font>
 </div>
-
 <br><br>
 
         [ <a href="#about">О НАС</a> ] 
@@ -497,79 +477,46 @@ document.getElementById('weddingForm').addEventListener('submit', async function
 });
 
 // СЧЕТЧИК ПОСЕТИТЕЛЕЙ
-let visitorCount = localStorage.getItem('visitorCount') || 1;
+const COUNTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzPAejO0LPCilaoQSMe7JAFG9kEnCSWLsWhwDZNMsZvsbaAgN12k2ju-SsfFw_DgDgd/exec';
 
-// Обновляем отображение счетчика
-function updateCounterDisplay() {
-    const countElement = document.getElementById('visitorCount');
-    countElement.textContent = visitorCount.toString().padStart(6, '0');
-    
-    // Меняем цвет в зависимости от количества
-    if (visitorCount >= 100) {
-        countElement.style.color = '#FF00FF';
-    } else if (visitorCount >= 50) {
-        countElement.style.color = '#FFA500';
-    } else if (visitorCount >= 20) {
-        countElement.style.color = '#00FF00';
-    } else {
-        countElement.style.color = '#FF0000';
+// Загружаем текущее значение счетчика
+async function loadCounter() {
+    try {
+        const response = await fetch(COUNTER_SCRIPT_URL + '?action=get');
+        const data = await response.json();
+        document.getElementById('globalCounter').textContent = 
+            data.count.toString().padStart(6, '0');
+    } catch (error) {
+        document.getElementById('globalCounter').textContent = '000001';
     }
 }
 
-// Функция для увеличения счетчика
-function incrementCounter() {
-    // Проверяем, нажимал ли уже пользователь кнопку
-    if (!localStorage.getItem('hasClickedCounter')) {
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        localStorage.setItem('hasClickedCounter', 'true');
-        
-        updateCounterDisplay();
-        
-        // Показываем сообщение
-        showCounterMessage();
-        
-        // Добавляем анимацию
-        animateCounter();
+// Увеличиваем счетчик
+async function incrementGlobalCounter() {
+    if (!localStorage.getItem('hasClickedGlobalCounter')) {
+        try {
+            const response = await fetch(COUNTER_SCRIPT_URL + '?action=increment');
+            const data = await response.json();
+            document.getElementById('globalCounter').textContent = 
+                data.count.toString().padStart(6, '0');
+            localStorage.setItem('hasClickedGlobalCounter', 'true');
+            alert('🎉 +1 к общему счетчику! Спасибо!');
+        } catch (error) {
+            alert('Ошибка соединения. Попробуйте позже!');
+        }
     } else {
-        alert('Вы уже нажимали эту кнопку! Спасибо! 😊');
+        alert('Ты уже голосовал! Один человек - один голос! 😄');
     }
 }
 
-// Показываем сообщение после нажатия
-function showCounterMessage() {
-    const messages = [
-        'УРА! Вы стали официальным посетителем! 🎉',
-        'Ваш визит записан в анналы истории! 📜',
-        'Спасибо, что отметились! 💫',
-        'Теперь вы часть нашей свадебной статистики! 📊',
-        'Ваше присутствие увековечено! 🌟'
-    ];
-    
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    alert(randomMessage);
-}
-
-// Анимация счетчика
-function animateCounter() {
-    const counter = document.getElementById('visitorCount');
-    counter.style.transform = 'scale(1.5)';
-    counter.style.transition = 'transform 0.3s';
-    
-    setTimeout(() => {
-        counter.style.transform = 'scale(1)';
-    }, 300);
-}
-
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', function() {
-    updateCounterDisplay();
-});
-
+// Загружаем счетчик при загрузке страницы
+loadCounter();
+</script>
 </script>
 </body>
 
 </html>
+
 
 
 
