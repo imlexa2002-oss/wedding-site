@@ -24,23 +24,26 @@
 		
 <!-- СЧЕТЧИК "Я БЫЛ ЗДЕСЬ" -->
 <div class="counter">
-    <p>Количество посетителей сайта:</p>
+    <p>Ты официальный посетитель нашего сайта!</p>
     
     <center>
         <table border="3" cellpadding="10" bgcolor="#FFFFFF" style="margin: 10px;">
             <tr>
                 <td>
-                    <div id="globalCounter" style="font-size: 3em; font-weight: bold; color: #FF0000; font-family: 'Courier New', monospace;">
-                        Загрузка...
+                    <div style="font-size: 0.7em; font-weight: bold; color: #FF0000; font-family: 'Courier New', monospace;">
+                        ТЫ ЛУЧШИЙ! 🌟
                     </div>
                 </td>
             </tr>
         </table>
     </center>
     
-    <button onclick="incrementGlobalCounter()" style="font-family: 'Comic Sans MS', cursive; padding: 15px 30px; background: #FF00FF; color: white; border: 3px outset #00FFFF; font-weight: bold; cursor: pointer;">
-        <blink>🌟 Я ТУТ БЫЛ! +1 🌟</blink>
+    <button onclick="markVisited()" style="font-family: 'Comic Sans MS', cursive; padding: 5px 10px; background: #FF00FF; color: white; border: 1px outset #00FFFF; font-weight: bold; cursor: pointer;font-size: 10px; ">
+        <blink>✅ Я БЫЛ ЗДЕСЬ!</blink>
     </button>
+    
+    <br>
+    <font size="1" color="#666666">Нажми, чтобы отметить свое посещение!</font>
 </div>
 <br><br>
 
@@ -477,40 +480,20 @@ document.getElementById('weddingForm').addEventListener('submit', async function
 });
 
 // СЧЕТЧИК ПОСЕТИТЕЛЕЙ
-const COUNTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzPAejO0LPCilaoQSMe7JAFG9kEnCSWLsWhwDZNMsZvsbaAgN12k2ju-SsfFw_DgDgd/exec';
-
-// Загружаем текущее значение счетчика
-async function loadCounter() {
-    try {
-        const response = await fetch(COUNTER_SCRIPT_URL + '?action=get');
-        const data = await response.json();
-        document.getElementById('globalCounter').textContent = 
-            data.count.toString().padStart(6, '0');
-    } catch (error) {
-        document.getElementById('globalCounter').textContent = '000001';
-    }
-}
-
-// Увеличиваем счетчик
-async function incrementGlobalCounter() {
-    if (!localStorage.getItem('hasClickedGlobalCounter')) {
-        try {
-            const response = await fetch(COUNTER_SCRIPT_URL + '?action=increment');
-            const data = await response.json();
-            document.getElementById('globalCounter').textContent = 
-                data.count.toString().padStart(6, '0');
-            localStorage.setItem('hasClickedGlobalCounter', 'true');
-            alert('🎉 +1 к общему счетчику! Спасибо!');
-        } catch (error) {
-            alert('Ошибка соединения. Попробуйте позже!');
-        }
+function markVisited() {
+    if (!localStorage.getItem('hasVisited')) {
+        localStorage.setItem('hasVisited', 'true');
+        alert('🎉 Ты официально отметился на нашем сайте! Спасибо!');
+        
+        // Меняем кнопку (тоже с уменьшенным шрифтом)
+        const button = event.target;
+        button.innerHTML = '✅ Я УЖЕ ЗДЕСЬ БЫЛ!';
+        button.style.background = '#00FF00';
+        button.style.fontSize = '14px'; // Сохраняем маленький шрифт
     } else {
-        alert('Ты уже голосовал! Один человек - один голос! 😄');
+        alert('Ты уже отмечался здесь! 😊');
     }
 }
-
-// Загружаем счетчик при загрузке страницы
-loadCounter();
 </script>
 </script>
 </body>
